@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Tao Zheng / Site Title"
+title                    : "Tao Zheng"
 title_separator          : "-"
 name                     : &name "Tao Zheng"
 description              : &description "This is my personal blog."
