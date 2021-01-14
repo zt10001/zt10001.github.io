@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "Tao of Pharmaceuticals"
+title                    : "Tao Zheng"
 title_separator          : "-"
 name                     : &name "Tao Zheng"
 description              : &description "Learning Pharmaceutical Science."
