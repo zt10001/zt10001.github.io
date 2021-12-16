@@ -15,7 +15,7 @@ Installation with Homebrew
 ```
 brew install tmux
 ```
-Configuration
+Configuration  
 I used [samoshkin](https://github.com/samoshkin)'s configuration.  
 [samoshkin/tmux-config](https://github.com/samoshkin/tmux-config)  
 Read the Readme file about his keybindings and how to add your custom configuration.
