@@ -5,11 +5,10 @@ permalink: /posts/2021/12/blog-post-0/
 tags:
   - code
 ---
-# Set up tmux and vim on a mac
 
 I have been learning code (primarily learning C) recently, and below is the log of how I set up tmux and vim as the environment. 
 
-## Tmux
+# Tmux
 Installation with Homebrew
 ```
 brew install tmux
@@ -19,7 +18,7 @@ I used [samoshkin](https://github.com/samoshkin)'s configuration.
 [samoshkin/tmux-config](https://github.com/samoshkin/tmux-config)
 Read the Readme file about his keybindings and how to add your custom configuration.
 
-## Vim
+# Vim
 Vim is pre-installed on macos. 
 About the configuration, I used [amix](https://github.com/amix)'s configuration.
 [amix/vimrc](https://github.com/amix/vimrc)
