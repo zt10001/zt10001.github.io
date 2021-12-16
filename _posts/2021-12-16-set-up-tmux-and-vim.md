@@ -15,10 +15,10 @@ brew install tmux
 ```
 Configuration
 I used [samoshkin](https://github.com/samoshkin)'s configuration. 
-[samoshkin/tmux-config](https://github.com/samoshkin/tmux-config)
+[samoshkin/tmux-config](https://github.com/samoshkin/tmux-config) 
 Read the Readme file about his keybindings and how to add your custom configuration.
 
 # Vim
 Vim is pre-installed on macos. 
-About the configuration, I used [amix](https://github.com/amix)'s configuration.
+About the configuration, I used [amix](https://github.com/amix)'s configuration. 
 [amix/vimrc](https://github.com/amix/vimrc)
