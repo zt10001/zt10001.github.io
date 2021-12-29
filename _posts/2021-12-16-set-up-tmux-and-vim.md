@@ -12,9 +12,11 @@ I have been learning code (primarily learning C) recently, and below is the log 
 
 # Tmux
 Installation with Homebrew
+
 ```bash
 brew install tmux
 ```
+
 Configuration  
 I used [samoshkin](https://github.com/samoshkin)'s configuration.  
 [samoshkin/tmux-config](https://github.com/samoshkin/tmux-config)  
