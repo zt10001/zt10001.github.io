@@ -12,7 +12,7 @@ I have been learning code (primarily learning C) recently, and below is the log 
 
 # Tmux
 Installation with Homebrew
-```
+```console
 brew install tmux
 ```
 Configuration  
