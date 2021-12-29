@@ -13,7 +13,7 @@ I have been learning code (primarily learning C) recently, and below is the log 
 # Tmux
 Installation with Homebrew
 
-```bash
+```shell
 brew install tmux
 ```
 
