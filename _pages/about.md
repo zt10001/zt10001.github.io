@@ -11,7 +11,7 @@ redirect_from:
 I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, University of Michigan.
 
 <body>
-		<script src="js/three.js"></script>
+	<script src="assets/js/three.js"></script>
 		<script>
 			const scene = new THREE.Scene();
 			const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -37,5 +37,5 @@ I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, Unive
 			};
 
 			animate();
-		</script>
-	</body>
+	  </script>
+</body>
