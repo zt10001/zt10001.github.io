@@ -8,8 +8,6 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, University of Michigan.
-
 <body>
 	<script src="assets/js/three.js"></script>
 		<script>
@@ -39,3 +37,5 @@ I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, Unive
 			animate();
 	  </script>
 </body>
+
+I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, University of Michigan.
