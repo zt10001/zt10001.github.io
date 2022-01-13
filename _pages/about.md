@@ -9,3 +9,5 @@ redirect_from:
 ---
 
 I am a Ph.D. student in Pharmaceutical Science at the College of Pharmacy, University of Michigan.
+
+{% include HelloWorld.html %}
