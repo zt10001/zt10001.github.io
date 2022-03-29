@@ -73,8 +73,8 @@ social:
 # Analytics
 analytics:
   provider: "custom" # false (default), "google", "google-universal", "custom"
-  google:
-    tracking_id: "G-RT1395Q1GX"
+    # google:
+    # tracking_id: "G-RT1395Q1GX"
 
 # Site Author
 author:
