@@ -12,6 +12,6 @@ tags:
 
 This post is a record of my continuing effort in learning about poly(lactic-co-glycolic acid) (PLGA).
 
-<img src="/images/posts/2880px-PLGA.png" style="display: block; margin: auto;" />
-
 <!--more-->
+
+<img src="/images/posts/2880px-PLGA.png" style="display: block; margin: auto;" />
