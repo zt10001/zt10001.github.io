@@ -1,2 +1,2 @@
-My personal blog. This was forked from the [academicpages](https://github.com/academicpages/academicpages.github.io).
+My personal blog. Forked from the [academicpages](https://github.com/academicpages/academicpages.github.io).
 
