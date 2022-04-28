@@ -72,7 +72,8 @@ social:
 
 # Analytics
 analytics:
-  provider: "custom" # false (default), "google", "google-universal", "custom"
+  provider:
+    "custom" # false (default), "google", "google-universal", "custom"
     # google:
     # tracking_id: "G-RT1395Q1GX"
 
@@ -94,7 +95,7 @@ author:
   flickr:
   facebook:
   foursquare:
-  github:
+  github: "zt10001"
   google_plus:
   keybase:
   instagram:
@@ -107,7 +108,7 @@ author:
   stackoverflow: # http://stackoverflow.com/users/123456/username
   steam:
   tumblr:
-  twitter: 
+  twitter:
   vine:
   weibo:
   xing:
