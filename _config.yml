@@ -85,7 +85,7 @@ author:
   location:
   employer:
   pubmed:
-  googlescholar: "https://scholar.google.com/citations?user=5JEpB4UAAAAJ&hl=en"
+  googlescholar: # "https://scholar.google.com/citations?user=5JEpB4UAAAAJ&hl=en"
   email: "taozheng@umich.edu"
   researchgate: # example: "https://www.researchgate.net/profile/yourprofile"
   uri:
@@ -95,13 +95,13 @@ author:
   flickr:
   facebook:
   foursquare:
-  github: "zt10001"
+  github: # "zt10001"
   google_plus:
   keybase:
   instagram:
   impactstory: #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm:
-  linkedin: "tao-zheng"
+  linkedin: # "tao-zheng"
   orcid:
   pinterest:
   soundcloud:
