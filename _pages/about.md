@@ -8,4 +8,3 @@ redirect_from:
   - /about.html
 ---
 
-I am a Ph.D. student in Pharmaceutical Sciences at the College of Pharmacy, University of Michigan.
