@@ -1,6 +1,7 @@
 ---
 layout: page
-title: Writing hones thinking.
+title: blog
+description: Writing hones thinking.
 permalink: /blog/
 nav: true
 nav_order: 1
