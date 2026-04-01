@@ -1,63 +1,15 @@
-# Ignore the contents of the _site directory and other cache directories
-_site/
-.DS_Store
-*/.DS_Store
-.AppleDouble
-.LSOverride
-Icon
-._*
-.DocumentRevisions-V100/
-.fseventsd/
-.Spotlight-V100/
-.TemporaryItems/
-.Trashes/
-.VolumeIcon.icns
-.com.apple.timemachine.donotpresent
-__MACOSX/
-Thumbs.db
-
-# Jekyll cache directory
-.jekyll-cache/
-
-# Ruby bundler
-.bundle/
-vendor/bundle/
-
-# Node dependencies and logs
-node_modules/
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Sass cache
-.sass-cache/
-
-# Python bytecode and Jupyter checkpoints
-__pycache__/
-*.py[cod]
-.ipynb_checkpoints/
-
-# IDE/editor files
-.vscode/
-.idea/
-
-# Logs and lock files
-*.log
-.sass-cache/
-
-# Ignore the directory for local files during development
-local/
-
-# Ignore the Gemfile that is generated
+_site
+.bundle
+.DS_store
+.idea
+.jekyll-cache
+.jekyll-metadata
+.ruby-version
+.sass-cache
+.tweet-cache
+.venv
+assets/libs/
+assets/rendercv/rendercv_output/*.typ
 Gemfile.lock
-
-# Ignore files created by npm
-node_modules
-package-lock.json
-
-# Ignore the vendor file at root level and bundle for alternative installation
-/vendor/
-.bundle/
-
-# Ignore folders related to IDEs
-.vscode/
+node_modules/
+vendor
