@@ -14,15 +14,50 @@ let toggleThemeSetting = () => {
 
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
-  localStorage.setItem("theme", themeSetting);
+  if (themeSetting == "system") {
+    localStorage.removeItem("theme");
+  } else {
+    localStorage.setItem("theme", themeSetting);
+  }
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
   applyTheme();
 };
 
+let syncThemeToggle = (themeSetting, theme) => {
+  const themeIcon = document.getElementById("theme-icon");
+  const themeToggle = document.getElementById("theme-toggle");
+
+  if (!themeIcon || !themeToggle) {
+    return;
+  }
+
+  themeIcon.classList.remove("fa-sun", "fa-moon", "fa-circle-half-stroke");
+
+  if (themeSetting == "system") {
+    themeIcon.classList.add("fa-circle-half-stroke");
+  } else if (theme == "dark") {
+    themeIcon.classList.add("fa-moon");
+  } else {
+    themeIcon.classList.add("fa-sun");
+  }
+
+  let title = "Use system theme";
+  if (themeSetting == "system") {
+    title = "Use light theme";
+  } else if (themeSetting == "light") {
+    title = "Use dark theme";
+  }
+
+  themeIcon.title = title;
+  themeToggle.setAttribute("title", title);
+  themeToggle.setAttribute("aria-label", title);
+};
+
 // Apply the computed dark or light theme to the website.
 let applyTheme = () => {
+  let themeSetting = determineThemeSetting();
   let theme = determineComputedTheme();
 
   transTheme();
@@ -57,7 +92,9 @@ let applyTheme = () => {
     setVegaLiteTheme(theme);
   }
 
+  document.documentElement.setAttribute("data-theme-setting", themeSetting);
   document.documentElement.setAttribute("data-theme", theme);
+  syncThemeToggle(themeSetting, theme);
 
   // Add class to tables.
   let tables = document.getElementsByTagName("table");
@@ -292,17 +329,19 @@ let determineComputedTheme = () => {
 };
 
 let initTheme = () => {
-  let themeSetting = determineThemeSetting();
-
-  setThemeSetting(themeSetting);
+  applyTheme();
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("light-toggle");
+    const mode_toggle = document.getElementById("theme-toggle");
 
-    mode_toggle.addEventListener("click", function () {
-      toggleThemeSetting();
-    });
+    if (mode_toggle) {
+      mode_toggle.addEventListener("click", function () {
+        toggleThemeSetting();
+      });
+    }
+
+    applyTheme();
   });
 
   // Add event listener to the system theme preference change.
