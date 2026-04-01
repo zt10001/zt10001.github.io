@@ -1,6 +1,6 @@
 ---
 layout: page
-title: blog
+title: Veritas odit moras.
 permalink: /blog/
 nav: true
 nav_order: 1
