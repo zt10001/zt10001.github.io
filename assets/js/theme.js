@@ -1,31 +1,21 @@
 // Has to be in the head tag, otherwise a flicker effect will occur.
 
-// Toggle through light, dark, and system theme settings.
+// Toggle between light and dark theme settings.
 let toggleThemeSetting = () => {
   let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    setThemeSetting("light");
-  } else if (themeSetting == "light") {
-    setThemeSetting("dark");
-  } else {
-    setThemeSetting("system");
-  }
+  setThemeSetting(themeSetting == "dark" ? "light" : "dark");
 };
 
 // Change the theme setting and apply the theme.
 let setThemeSetting = (themeSetting) => {
-  if (themeSetting == "system") {
-    localStorage.removeItem("theme");
-  } else {
-    localStorage.setItem("theme", themeSetting);
-  }
+  localStorage.setItem("theme", themeSetting);
 
   document.documentElement.setAttribute("data-theme-setting", themeSetting);
 
   applyTheme();
 };
 
-let syncThemeToggle = (themeSetting, theme) => {
+let syncThemeToggle = (theme) => {
   const themeIcon = document.getElementById("theme-icon");
   const themeToggle = document.getElementById("theme-toggle");
 
@@ -33,23 +23,15 @@ let syncThemeToggle = (themeSetting, theme) => {
     return;
   }
 
-  themeIcon.classList.remove("fa-sun", "fa-moon", "fa-circle-half-stroke");
+  themeIcon.classList.remove("fa-sun", "fa-moon");
 
-  if (themeSetting == "system") {
-    themeIcon.classList.add("fa-circle-half-stroke");
-  } else if (theme == "dark") {
+  if (theme == "dark") {
     themeIcon.classList.add("fa-moon");
   } else {
     themeIcon.classList.add("fa-sun");
   }
 
-  let title = "Use system theme";
-  if (themeSetting == "system") {
-    title = "Use light theme";
-  } else if (themeSetting == "light") {
-    title = "Use dark theme";
-  }
-
+  let title = theme == "dark" ? "Switch to light theme" : "Switch to dark theme";
   themeIcon.title = title;
   themeToggle.setAttribute("title", title);
   themeToggle.setAttribute("aria-label", title);
@@ -57,7 +39,6 @@ let syncThemeToggle = (themeSetting, theme) => {
 
 // Apply the computed dark or light theme to the website.
 let applyTheme = () => {
-  let themeSetting = determineThemeSetting();
   let theme = determineComputedTheme();
 
   transTheme();
@@ -92,9 +73,9 @@ let applyTheme = () => {
     setVegaLiteTheme(theme);
   }
 
-  document.documentElement.setAttribute("data-theme-setting", themeSetting);
+  document.documentElement.setAttribute("data-theme-setting", theme);
   document.documentElement.setAttribute("data-theme", theme);
-  syncThemeToggle(themeSetting, theme);
+  syncThemeToggle(theme);
 
   // Add class to tables.
   let tables = document.getElementsByTagName("table");
@@ -302,30 +283,18 @@ let transTheme = () => {
   }, 500);
 };
 
-// Determine the expected state of the theme toggle, which can be "dark", "light", or
-// "system". Default is "system".
+// Determine the expected state of the theme toggle, which can be "dark" or "light".
 let determineThemeSetting = () => {
   let themeSetting = localStorage.getItem("theme");
-  if (themeSetting != "dark" && themeSetting != "light" && themeSetting != "system") {
-    themeSetting = "system";
+  if (themeSetting != "dark" && themeSetting != "light") {
+    themeSetting = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
   return themeSetting;
 };
 
-// Determine the computed theme, which can be "dark" or "light". If the theme setting is
-// "system", the computed theme is determined based on the user's system preference.
+// Determine the computed theme, which can be "dark" or "light".
 let determineComputedTheme = () => {
-  let themeSetting = determineThemeSetting();
-  if (themeSetting == "system") {
-    const userPref = window.matchMedia;
-    if (userPref && userPref("(prefers-color-scheme: dark)").matches) {
-      return "dark";
-    } else {
-      return "light";
-    }
-  } else {
-    return themeSetting;
-  }
+  return determineThemeSetting();
 };
 
 let initTheme = () => {
