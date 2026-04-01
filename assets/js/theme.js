@@ -16,23 +16,18 @@ let setThemeSetting = (themeSetting) => {
 };
 
 let syncThemeToggle = (theme) => {
-  const themeIcon = document.getElementById("theme-icon");
-  const themeToggle = document.getElementById("theme-toggle");
+  const darkIcon = document.getElementById("light-toggle-dark");
+  const lightIcon = document.getElementById("light-toggle-light");
+  const themeToggle = document.getElementById("light-toggle");
 
-  if (!themeIcon || !themeToggle) {
+  if (!themeToggle) {
     return;
   }
 
-  themeIcon.classList.remove("fa-sun", "fa-moon");
-
-  if (theme == "dark") {
-    themeIcon.classList.add("fa-moon");
-  } else {
-    themeIcon.classList.add("fa-sun");
-  }
+  if (darkIcon) darkIcon.style.display = theme == "dark" ? "inline-block" : "none";
+  if (lightIcon) lightIcon.style.display = theme == "light" ? "inline-block" : "none";
 
   let title = theme == "dark" ? "Switch to light theme" : "Switch to dark theme";
-  themeIcon.title = title;
   themeToggle.setAttribute("title", title);
   themeToggle.setAttribute("aria-label", title);
 };
@@ -302,7 +297,7 @@ let initTheme = () => {
 
   // Add event listener to the theme toggle button.
   document.addEventListener("DOMContentLoaded", function () {
-    const mode_toggle = document.getElementById("theme-toggle");
+    const mode_toggle = document.getElementById("light-toggle");
 
     if (mode_toggle) {
       mode_toggle.addEventListener("click", function () {
