@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Veritas odit moras.
+title: Writing hones thinking.
 permalink: /blog/
 nav: true
 nav_order: 1
