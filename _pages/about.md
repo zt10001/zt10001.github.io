@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Working on pharmaceutical R&D
+subtitle: Working on pharmaceutical R&D.
 
 profile:
   align: right
