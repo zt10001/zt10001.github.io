@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Working on pharmaceuticals.
+subtitle: Veritas odit moras.
 
 profile:
   align: right
