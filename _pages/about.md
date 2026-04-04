@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Veritas odit moras.
+subtitle:
 
 profile:
   align: right
