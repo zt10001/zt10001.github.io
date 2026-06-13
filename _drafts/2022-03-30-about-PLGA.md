@@ -1,9 +1,9 @@
 ---
+layout: post
 title: "About PLGA"
 date: 2022-03-30
 permalink: /posts/2022/03/PLGA
 excerpt_separator: <!--more-->
-toc: true
 tags:
   - pharmaceutical science
   - polymer
@@ -15,6 +15,9 @@ This post is a record of my continuing effort in learning about poly(lactic-co-g
 <!--more-->
 
 <figure>
-  <img src="/images/posts/2880px-PLGA.png" style="display: block; margin: auto;" />
+  <img
+    src="{{ '/images/posts/2880px-PLGA.png' | relative_url }}"
+    alt="Chemical structure of PLGA"
+  >
   <figcaption>Fig.1 - PLGA structure</figcaption>
 </figure>

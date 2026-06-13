@@ -1,0 +1,28 @@
+entries:
+  - title: About
+    entries:
+      - title: >
+          I work on pharmaceutical research and development at the University
+          of Michigan College of Pharmacy.
+      - title: More about me
+        url: about.html
+
+  - title: Writing
+    post_list:
+      limit: 5
+      show_more: true
+      show_more_text: View all writing
+      show_more_url: archive.html
+
+  - title: Elsewhere
+    entries:
+      - title: Email
+        url: mailto:taozheng@umich.edu
+      - title: GitHub
+        url: https://github.com/zt10001
+      - title: LinkedIn
+        url: https://www.linkedin.com/in/tao-zheng
+      - title: Google Scholar
+        url: https://scholar.google.com/citations?user=5JEpB4UAAAAJ
+      - title: RSS
+        url: feed.xml

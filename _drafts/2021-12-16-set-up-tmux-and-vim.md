@@ -1,9 +1,9 @@
 ---
+layout: post
 title: "Set Up Tmux and Vim"
 date: 2021-12-16
 permalink: /posts/2021/12/Tmux-And-Vim
 excerpt_separator: <!--more-->
-toc: true
 tags:
   - code
 ---
@@ -12,7 +12,10 @@ I have been learning code (primarily learning C) recently, and below is the log 
 
 <!--more-->
 
-<img src="/images/posts/tmux-and-vim/tmux-and-vim_20211216.png" style="display: block; margin: auto;" />
+<img
+  src="{{ '/images/posts/tmux-and-vim/tmux-and-vim_20211216.png' | relative_url }}"
+  alt="Tmux and Vim terminal setup"
+>
 
 # Tmux
 

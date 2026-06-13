@@ -1,17 +1,12 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
-gem 'jekyll'
-
-group :jekyll_plugins do
-    gem 'jekyll-3rd-party-libraries'
-    gem 'jekyll-email-protect'
-    gem 'jekyll-feed'
-    gem 'jekyll-link-attributes'
-    gem 'jekyll-sitemap'
-    gem 'jekyll-socials'
-    gem 'jemoji'
-end
-
-group :other_plugins do
-    gem 'webrick'
-end
+gem "base64"
+gem "bigdecimal"
+gem "csv"
+gem "jekyll", "~> 3.10"
+gem "jekyll-feed", "~> 0.17"
+gem "jekyll-remote-theme", "~> 0.4"
+gem "jekyll-seo-tag", "~> 2.8"
+gem "kramdown-parser-gfm"
+gem "logger"
+gem "webrick", "~> 1.9"
