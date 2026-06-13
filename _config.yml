@@ -10,8 +10,6 @@ description: >
 permalink: /:slug.html
 favicon: profile.jpg
 
-remote_theme: riggraz/no-style-please@2f8dba2c23633b21e45dce0fe2e34ec2d79bb1ca
-
 theme_config:
   appearance: auto
   back_home_text: ".."
@@ -24,13 +22,7 @@ sass:
 
 plugins:
   - jekyll-feed
-  - jekyll-remote-theme
   - jekyll-seo-tag
-
-jektex:
-  silent: true
-
-disable_disk_cache: true
 
 defaults:
   - scope:

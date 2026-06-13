@@ -1,7 +1,7 @@
 # Repository Guidelines
 
-This is a GitHub Pages site built with Jekyll and the
-[`no-style-please`](https://github.com/riggraz/no-style-please) remote theme.
+This is a GitHub Pages site built with Jekyll and vendored files from the
+[`no-style-please`](https://github.com/riggraz/no-style-please) theme.
 
 ## Local Development
 
