@@ -14,8 +14,8 @@ theme_config:
   appearance: auto
   back_home_text: ".."
   date_format: "%Y-%m-%d"
-  show_description: true
-  lowercase_titles: false
+  show_description: false
+  lowercase_titles: true
 
 sass:
   style: compressed
