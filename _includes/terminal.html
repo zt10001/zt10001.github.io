@@ -1,0 +1,65 @@
+{%- comment -%}
+Interactive shell. The virtual filesystem below is generated from site data
+(_data/menu.yml, _posts) so it stays in sync with the rendered page.
+{%- endcomment -%}
+
+{%- capture readme_content -%}
+you're already looking at it — scroll up.
+{%- endcapture -%}
+
+{%- capture about_content -%}
+{% for line in site.data.menu.about_lines %}{{ line }}
+{% endfor %}
+{{ site.data.menu.signature }}
+{%- endcapture -%}
+
+<div class="interactive" id="interactive">
+  <div class="tab-hint">type `help` for a list of commands.</div>
+  <div id="history"></div>
+  <div class="input-line">
+    <span class="prompt-prefix" id="prompt-prefix"><span class="user">{{ site.theme_config.shell_user | default: "tao" }}</span>@<span class="host">{{ site.theme_config.shell_host | default: "zt10001" }}</span>:~$ </span>
+    <input type="text" id="terminal-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal input">
+  </div>
+</div>
+
+<script type="application/json" id="terminal-fs">
+{
+  "README.md": { "type": "file", "content": {{ readme_content | strip | jsonify }} },
+  "about.md": { "type": "file", "content": {{ about_content | strip | jsonify }} },
+  "contact.txt": { "type": "file", "content": {{ site.email | jsonify }} }
+  {%- if site.posts.size > 0 -%}
+  ,"writing": { "type": "dir", "children": {
+    {%- for post in site.posts -%}
+      {%- capture post_file -%}{{ post.url | remove_first: "/" | replace: ".html", ".md" }}{%- endcapture -%}
+      {{ post_file | jsonify }}: { "type": "link", "url": {{ post.url | relative_url | jsonify }}, "desc": {{ post.description | default: post.title | jsonify }} }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  } }
+  {%- endif -%}
+  {%- for section in site.data.menu.sections -%}
+    {%- if section.rows and section.about != true -%}
+  ,{{ section.title | jsonify }}: { "type": "dir", "children": {
+      {%- for row in section.rows -%}
+        {{ row.title | replace: " ", "-" | jsonify }}: { "type": "link", "url": {{ row.url | relative_url | jsonify }}, "desc": {{ row.desc | default: "" | jsonify }} }{%- unless forloop.last -%},{%- endunless -%}
+      {%- endfor -%}
+  } }
+    {%- endif -%}
+  {%- endfor -%}
+  ,"links": { "type": "dir", "children": {
+    {%- for social in site.data.menu.socials -%}
+      {{ social.title | jsonify }}: { "type": "link", "url": {{ social.url | relative_url | jsonify }}, "desc": {{ social.url | jsonify }} }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
+  } }
+}
+</script>
+
+<script type="application/json" id="terminal-meta">
+{
+  "user": {{ site.theme_config.shell_user | default: "tao" | jsonify }},
+  "host": {{ site.theme_config.shell_host | default: "zt10001" | jsonify }},
+  "whoami": {{ site.author | jsonify }},
+  "title": {{ site.data.menu.tagline | default: site.description | jsonify }},
+  "url": {{ site.url | append: site.baseurl | jsonify }}
+}
+</script>
+
+<script src="{{ "/assets/js/terminal.js" | relative_url }}" defer></script>

@@ -1,0 +1,5 @@
+{%- comment -%}
+Shell prompt line: user@host:path$ command
+Params: cmd (text), path (default "~"), url (optional — renders the command as a link), class
+{%- endcomment -%}
+<div class="prompt{% if include.class %} {{ include.class }}{% endif %}"><span class="user">{{ site.theme_config.shell_user | default: "tao" }}</span>@<span class="host">{{ site.theme_config.shell_host | default: "zt10001" }}</span>:{{ include.path | default: "~" }}$ {% if include.url %}<a class="cmd" href="{{ include.url }}">{{ include.cmd }}</a>{% else %}<span class="cmd">{{ include.cmd }}</span>{% endif %}</div>

@@ -1,9 +1,19 @@
 ---
 layout: default
 ---
+{%-capture term_path-%}{%-include term_path.html-%}{%-endcapture-%}
+{%-capture term_cmd-%}{{ page.term_cmd | default: "ls -la writing/" }}{%-endcapture-%}
 
-{%-include back_link.html-%}
+{%-include prompt.html cmd=term_cmd path=term_path-%}
 
-<h1>{{ page.title }}</h1>
+<div class="output">
+  <div class="h1">{%-if site.theme_config.lowercase_titles-%}{{ page.title | downcase }}{%-else-%}{{ page.title }}{%-endif-%}</div>
+</div>
 
-{%-include post_list.html category=page.which_category-%}
+<div class="output">
+  {%-include post_list.html category=page.which_category-%}
+</div>
+
+{{ content }}
+
+{%-include back_link.html path=term_path-%}

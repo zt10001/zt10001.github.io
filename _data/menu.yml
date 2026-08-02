@@ -1,22 +1,41 @@
-entries:
-  - title: info
-    entries:
-      - title: >
-          pharmaceutical sciences researcher at the University of Michigan
-          College of Pharmacy.
-      - title: about me
-        url: about.html
+tagline: notes from a pharmaceutical sciences lab
 
-  - title: links
-    entries:
-      - title: email
-        url: mailto:taozheng@umich.edu
-      - title: github
-        url: https://github.com/zt10001
-      - title: linkedin
-        url: https://www.linkedin.com/in/tao-zheng
+sections:
+  - title: research
+    rows:
       - title: google scholar
         url: https://scholar.google.com/citations?user=5JEpB4UAAAAJ
+        desc: publications and citations.
+      - title: um college of pharmacy
+        url: https://pharmacy.umich.edu/
+        desc: pharmaceutical sciences, university of michigan.
 
+  - title: about
+    about: true
+    rows:
+      - title: about.md
+        url: /about.html
+        desc: longer bio and a portrait.
+
+about_lines:
+  - pharmaceutical sciences researcher at the university of michigan college of pharmacy.
+  - drug delivery, formulation, and whatever the bench turns up this week.
+
+signature: "— tao zheng"
+
+socials:
+  - title: github
+    icon: github
+    url: https://github.com/zt10001
+  - title: linkedin
+    icon: linkedin
+    url: https://www.linkedin.com/in/tao-zheng
+  - title: scholar
+    icon: scholar
+    url: https://scholar.google.com/citations?user=5JEpB4UAAAAJ
+  - title: email
+    icon: email
+    url: mailto:taozheng@umich.edu
   - title: rss
-    url: feed.xml
+    icon: rss
+    url: /feed.xml

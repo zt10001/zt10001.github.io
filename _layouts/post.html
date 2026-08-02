@@ -1,15 +1,25 @@
 ---
 layout: default
 ---
+{%-capture file_name-%}{{ page.url | remove_first: "/" | replace: ".html", ".md" }}{%-endcapture-%}
+{%-capture term_cmd-%}cat {{ file_name }}{%-endcapture-%}
 
-{%-include back_link.html-%}
+{%-include prompt.html cmd=term_cmd-%}
 
 <article>
-  <p class="post-meta">
-    <time datetime="{{ page.date }}">{{ page.date | date: site.theme_config.date_format }}</time>
-  </p>
-  
-  <h1>{{ page.title }}</h1>
+  <div class="output">
+    <div class="h1">{%-if site.theme_config.lowercase_titles-%}{{ page.title | downcase }}{%-else-%}{{ page.title }}{%-endif-%}</div>
+    <p class="post-meta">
+      <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: site.theme_config.date_format }}</time>
+      {%-if page.categories.size > 0-%}
+        <span> · {{ page.categories | join: " · " }}</span>
+      {%-endif-%}
+    </p>
+  </div>
 
-  {{ content }}
+  <div class="content">
+    {{ content }}
+  </div>
 </article>
+
+{%-include back_link.html-%}
