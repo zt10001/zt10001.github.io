@@ -8,7 +8,7 @@ description: >
   on pharmaceutical research and development.
 
 permalink: /:slug.html
-favicon: profile.jpg
+favicon: /assets/favicon.svg
 
 theme_config:
   shell_user: tao
