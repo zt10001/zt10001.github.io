@@ -1,2 +1,0 @@
-{%- comment -%}Outputs the shell path for the current page, e.g. ~ or ~/about.md{%- endcomment -%}
-{%- if page.term_path -%}{{ page.term_path }}{%- elsif page.url == "/" -%}~{%- else -%}~/{{ page.url | remove_first: "/" | replace: ".html", ".md" }}{%- endif -%}

@@ -1,5 +1,5 @@
 {%-if include.category-%}
-  {%-assign posts = site.categories[include.category]-%}
+  {%-assign posts = site.categories[include.category]-%}  
 {%-else-%}
   {%-assign posts = site.posts-%}
 {%-endif-%}
@@ -11,22 +11,19 @@
 {%-endif-%}
 
 {%- if posts.size > 0 -%}
-  {%- for post in posts limit: include.limit -%}
-    <div class="row">
-      <span class="date">{{ post.date | date: site.theme_config.date_format }}</span>
-      {%- if site.theme_config.lowercase_titles == true -%}
-        <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
-      {%- else -%}
-        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      {%- endif -%}
-      {%- if post.description -%}<span class="desc"> — {{ post.description }}</span>{%- endif -%}
-    </div>
-  {%- endfor -%}
-  {%- if include.show_more and limit_exceeded -%}
-    <div class="row">
-      <a href="{{ include.show_more_url | relative_url }}">{{ include.show_more_text | default: "more..." }}</a>
-    </div>
-  {%- endif -%}
-{%- else -%}
-  <div class="about-text">{{ include.empty_text | default: "nothing published yet." }}</div>
+  <ul>
+    {%- for post in posts limit: include.limit -%}
+        <li>
+          <span>{{- post.date | date: site.theme_config.date_format -}}</span>
+          {% if site.theme_config.lowercase_titles == true %}
+          <a href="{{ post.url | relative_url }}">{{ post.title | downcase }}</a>
+          {% else %}
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          {% endif %}
+        </li>
+    {%- endfor -%}
+    {%- if include.show_more and limit_exceeded -%}
+      <li><a href="{{ include.show_more_url }}">{{ include.show_more_text | default: "Show more..." }}</a></li>
+    {%- endif -%}
+  </ul>
 {%- endif -%}

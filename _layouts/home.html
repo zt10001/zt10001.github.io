@@ -1,67 +1,13 @@
 ---
 layout: default
 ---
-{%-include prompt.html cmd="cat README.md"-%}
-
-<div class="output">
-  <div class="h1">{{ site.title }}</div>
-  {%-if site.data.menu.tagline-%}
-    <div class="tagline">{{ site.data.menu.tagline }}</div>
-  {%-endif-%}
+<header>
+  <h1>{{ site.title }}</h1>
   {%-if site.theme_config.show_description-%}
-    <div class="tagline">{{ site.description }}</div>
+    <p>{{ site.description }}</p>
   {%-endif-%}
-</div>
+</header>
 
-{%-for section in site.data.menu.sections-%}
-  <div class="h2">## {{ section.title }}</div>
-
-  <div class="output">
-    {%-if section.about-%}
-      {%-for line in site.data.menu.about_lines-%}
-        <div class="about-text">{{ line }}</div>
-      {%-endfor-%}
-    {%-endif-%}
-
-    {%-if section.post_list-%}
-      {%
-        include post_list.html
-          category=section.post_list.category
-          limit=section.post_list.limit
-          show_more=section.post_list.show_more
-          show_more_text=section.post_list.show_more_text
-          show_more_url=section.post_list.show_more_url
-          empty_text=section.post_list.empty_text
-      -%}
-    {%-endif-%}
-
-    {%-if section.rows-%}
-      {%-if section.about-%}<hr class="rule">{%-endif-%}
-      {%-for row in section.rows-%}
-        <div class="row">
-          {%-if row.url-%}
-            <a href="{{ row.url | relative_url }}"{% if row.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{{ row.title }}</a>
-          {%-else-%}
-            <span class="cmd">{{ row.title }}</span>
-          {%-endif-%}
-          {%-if row.desc-%}<span class="desc"> — {{ row.desc }}</span>{%-endif-%}
-        </div>
-      {%-endfor-%}
-    {%-endif-%}
-
-    {%-if section.about-%}
-      {%-if site.data.menu.signature-%}
-        <div class="sig">{{ site.data.menu.signature }}</div>
-      {%-endif-%}
-      <div class="socials">
-        {%-for social in site.data.menu.socials-%}
-          <a href="{{ social.url | relative_url }}"{% if social.url contains "://" %} target="_blank" rel="noopener"{% endif %}>{%-include icon.html name=social.icon-%} {{ social.title }}</a>
-        {%-endfor-%}
-      </div>
-    {%-endif-%}
-  </div>
-{%-endfor-%}
+{%-include menu_item.html collection=site.data.menu.entries-%}
 
 {{ content }}
-
-{%-include terminal.html-%}

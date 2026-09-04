@@ -1,2 +1,1 @@
-{%-comment-%}Bottom-of-page prompt line: a `cd ..` link back home. Param: path{%-endcomment-%}
-<div class="prompt prompt-back"><span class="user">{{ site.theme_config.shell_user | default: "tao" }}</span>@<span class="host">{{ site.theme_config.shell_host | default: "zt10001" }}</span>:{{ include.path | default: "~" }}$ <a class="cmd" href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text | default: "cd .." }}</a></div>
+<a href="{{ "/" | relative_url }}">{{ site.theme_config.back_home_text }}</a>

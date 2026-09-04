@@ -1,17 +1,9 @@
 ---
 layout: default
 ---
-{%-capture file_name-%}{{ page.url | remove_first: "/" | replace: ".html", ".md" }}{%-endcapture-%}
-{%-capture term_cmd-%}{{ page.term_cmd | default: "cat " | append: file_name }}{%-endcapture-%}
-
-{%-include prompt.html cmd=term_cmd-%}
-
-<div class="output">
-  <div class="h1">{%-if site.theme_config.lowercase_titles-%}{{ page.title | downcase }}{%-else-%}{{ page.title }}{%-endif-%}</div>
-</div>
-
-<div class="content">
-  {{ content }}
-</div>
 
 {%-include back_link.html-%}
+
+<h1>{{ page.title }}</h1>
+
+{{ content }}

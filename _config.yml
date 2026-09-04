@@ -11,9 +11,8 @@ permalink: /:slug.html
 favicon: /assets/favicon.svg
 
 theme_config:
-  shell_user: tao
-  shell_host: zt10001
-  back_home_text: "cd .."
+  appearance: auto
+  back_home_text: ".."
   date_format: "%Y-%m-%d"
   show_description: false
   lowercase_titles: true
